@@ -1,9 +1,13 @@
 package com.example.deeksha.zoo;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +20,16 @@ public class ZooInfoActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zoo_info);
+
+        Button callButton = (Button) findViewById(R.id.callButton);
+        callButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String phoneNumber = "tel:888-8888";
+                Intent call = new Intent(Intent.ACTION_CALL, Uri.parse(phoneNumber));
+                startActivity(call);
+            }
+        });
     }
 
 
