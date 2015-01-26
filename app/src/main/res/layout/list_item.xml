@@ -32,5 +32,4 @@
         android:typeface="sans"
         android:textSize="15dip"
         android:textStyle="bold"/>
-
 </RelativeLayout>

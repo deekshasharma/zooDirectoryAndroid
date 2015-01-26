@@ -15,17 +15,20 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="40dip"
+        android:paddingBottom="150dip">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:id="@+id/detailAnimalImage"
-        android:scaleType="centerCrop"
-        android:layout_below="@+id/detailAnimalName"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="false"
-        android:paddingTop="190dip"
-        android:paddingBottom="160dip" />
+        android:scaleType="centerCrop" />
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
