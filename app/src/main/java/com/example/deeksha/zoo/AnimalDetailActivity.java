@@ -3,6 +3,7 @@ package com.example.deeksha.zoo;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -51,6 +52,12 @@ public class AnimalDetailActivity extends ActionBarActivity {
             Intent intent = new Intent(getApplicationContext(),ZooInfoActivity.class);
             startActivity(intent);
             return true;
+        }
+        if(id == R.id.action_uninstall)
+        {
+            Uri packageURI = Uri.parse("package:com.example.deeksha.zoo");
+            Intent intent = new Intent(Intent.ACTION_DELETE,packageURI);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

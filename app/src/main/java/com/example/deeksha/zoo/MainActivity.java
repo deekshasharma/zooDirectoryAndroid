@@ -3,6 +3,7 @@ package com.example.deeksha.zoo;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -93,11 +94,17 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_information) {
-
+        if (id == R.id.action_information)
+        {
             Intent intent = new Intent(getApplicationContext(),ZooInfoActivity.class);
             startActivity(intent);
             return true;
+        }
+        if(id == R.id.action_uninstall)
+        {
+            Uri packageURI = Uri.parse("package:com.example.deeksha.zoo");
+            Intent intent = new Intent(Intent.ACTION_DELETE,packageURI);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
