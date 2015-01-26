@@ -1,11 +1,14 @@
 package com.example.deeksha.zoo;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -13,12 +16,12 @@ import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
+    final Animal animal = new Animal();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Animal animal = new Animal();
         final String[] animalNames = animal.getAnimalNames();
         final Integer[] imageId = animal.getImageId();
         final String[] animalDescriptions = animal.getAnimalDescriptions();
@@ -35,13 +38,48 @@ public class MainActivity extends ActionBarActivity {
                 int image = imageId[position];
                 String description = animalDescriptions[position];
 
+                if(position == animalNames.length - 1)
+                {
+                    openDialog(image, name, description);
+                }
+
+                if(position < animalNames.length - 1){
                 Intent intent = new Intent(getApplicationContext(),AnimalDetailActivity.class);
                 intent.putExtra("DetailName",name);
                 intent.putExtra("DetailImage",image);
                 intent.putExtra("DetailDescription",description);
-                startActivity(intent);
+                startActivity(intent);}
+
             }
         });
+    }
+
+
+    private void openDialog(final int imageId, final String name, final String description)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Warning!!");
+        builder.setMessage("Scary Animal! Do you want to click ?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        Intent intent = new Intent(getApplicationContext(),AnimalDetailActivity.class);
+
+                        intent.putExtra("DetailName",name);
+                        intent.putExtra("DetailImage",imageId);
+                        intent.putExtra("DetailDescription",description);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //
+                    }
+                });
+        builder.create().show();
+
     }
 
 
