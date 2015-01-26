@@ -25,9 +25,7 @@ public class Animal {
                             "and western Qld, NSW and Victoria.\n" +
                             "\n" +
                             "Koalas live in societies, just like humans, so they need to be able to come into " +
-                            "contact with other koalas. It is because of this they need to have areas of suitable " +
-                            "eucalypt forest which are large enough to support a healthy koala population and to " +
-                            "allow for expansion by maturing young koalas. Koalas are highly territorial and in " +
+                            "contact with other koalas.Koalas are highly territorial and in " +
                             "stable breeding groups, individual members of koala society maintain their own \"home range\" areas.",
 
 

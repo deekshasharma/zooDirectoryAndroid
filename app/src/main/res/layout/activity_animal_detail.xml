@@ -16,21 +16,23 @@
         android:layout_centerHorizontal="true" />
 
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/detailAnimalImage"
+        android:scaleType="centerCrop"
+        android:layout_below="@+id/detailAnimalName"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false"
+        android:paddingTop="190dip"
+        android:paddingBottom="160dip" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/animalDescription"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="170dp" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/detailAnimalImage"
-        android:layout_below="@+id/detailAnimalName"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
