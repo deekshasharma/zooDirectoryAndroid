@@ -48,6 +48,12 @@ public class ZooInfoActivity extends ActionBarActivity {
             Toast.makeText(this,"You are already on Zoo information page",Toast.LENGTH_SHORT).show();
             return true;
         }
+        if(id == R.id.action_uninstall)
+        {
+            Uri packageURI = Uri.parse("package:com.example.deeksha.zoo");
+            Intent intent = new Intent(Intent.ACTION_DELETE,packageURI);
+            startActivity(intent);
+        }
 
         return super.onOptionsItemSelected(item);
     }
